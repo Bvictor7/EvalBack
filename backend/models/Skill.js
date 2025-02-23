@@ -1,20 +1,15 @@
-import express from 'express';
-import skills from '../models/Skills.js';
-import auth, { admin } from '../middlewares/auth.js';
+import mongoose from 'mongoose';
 
-const router = express.Router();
+const SkillSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  category: { type: String, required: true },
+  level: { 
+    type: String, 
+    enum: ['débutant', 'intermédiaire', 'expert'], 
+    required: true 
+  },
+  image: { type: String, required: true } // URL de l'image sur Cloudinary
+}, { timestamps: true });
 
-// ... autres endpoints
-
-// Supprimer une compétence (accessible uniquement aux admins)
-router.delete('/:id', auth, admin, async (req, res) => {
-  try {
-    const deletedSkill = await Skill.findByIdAndDelete(req.params.id);
-    if (!deletedSkill) return res.status(404).json({ message: 'Compétence non trouvée' });
-    res.status(200).json({ message: 'Compétence supprimée avec succès' });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
-
-export default router;
+const Skill = mongoose.model('Skill', SkillSchema);
+export default Skill;

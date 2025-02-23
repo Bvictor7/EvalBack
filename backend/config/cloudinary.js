@@ -1,3 +1,11 @@
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: `${__dirname}/../.env` });
+
 import { v2 as cloudinary } from 'cloudinary';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
 

@@ -1,13 +1,11 @@
 import dotenv from 'dotenv';
 dotenv.config();
-
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
-
 import authRoutes from './routes/auth.js';
 import skillRoutes from './routes/skills.js';
 import settingsRoutes from './routes/settings.js';
@@ -22,12 +20,9 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 
 // Connexion à MongoDB
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('🟢 MongoDB connecté'))
-.catch(err => console.error('🔴 Erreur de connexion à MongoDB', err));
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('🟢 MongoDB connecté'))
+  .catch(err => console.error('🔴 Erreur de connexion à MongoDB', err));
 
 // Intégration des routes
 app.use('/api/auth', authRoutes);
