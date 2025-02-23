@@ -97,4 +97,45 @@ Déploiement
 Pour déployer cette API, tu peux utiliser des plateformes telles que Heroku, Render, ou Railway.
 Assure-toi que toutes les variables d'environnement sont correctement configurées sur la plateforme choisie.
 
-# evalBack
+
+Jour 2
+
+ Résumé du projet Backend du Portfolio
+📌 Lien du backend déployé : https://evalback-xm2d.onrender.com
+
+✅ Ce qui a été fait :
+1️⃣ Configuration et mise en place du backend
+📂 Création du projet avec Express et Mongoose.
+🔧 Utilisation de .env pour stocker les variables sensibles (MongoDB, Cloudinary, JWT).
+🔒 Sécurisation avec helmet, cors, cookie-parser et morgan.
+📡 Connexion à MongoDB Atlas avec mongoose.
+🎛 Gestion des logs et des erreurs.
+2️⃣ Développement des fonctionnalités principales
+📌 Gestion des utilisateurs (Authentification)
+🔹 Inscription (POST /api/auth/register) avec bcrypt pour hacher les mots de passe.
+🔹 Connexion (POST /api/auth/login) avec JWT pour la gestion des sessions.
+🔹 Protection des routes sensibles avec un middleware auth.js.
+📌 Gestion des compétences (Skills)
+🔹 Lister toutes les compétences (GET /api/skills).
+🔹 Récupérer une compétence par ID (GET /api/skills/:id).
+🔹 Ajouter une nouvelle compétence (POST /api/skills).
+🔹 Mettre à jour une compétence (PUT /api/skills/:id).
+🔹 Supprimer une compétence (DELETE /api/skills/:id) (Accessible uniquement aux admins).
+📌 Gestion des paramètres utilisateur
+🔹 Modification des préférences (PUT /api/settings/:userId).
+3️⃣ Gestion des fichiers et upload d’images
+📂 Stockage d'images sur Cloudinary.
+📤 Upload d’une image (POST /api/skills/upload).
+🔍 Stockage et récupération des URL d’images pour chaque compétence.
+4️⃣ Déploiement du backend
+🚀 Déploiement sur Render avec une base de données MongoDB Atlas.
+🔗 Lien du backend en production : https://evalback-xm2d.onrender.com
+🔎 Tests avec Postman et cURL pour valider toutes les routes.
+📌 Prochaines étapes : le frontend
+🎯 Demain, on attaque le frontend !
+💻 Technos prévues : React (ou autre framework JS si besoin).
+🔗 Connexion au backend pour consommer les API et afficher les données.
+🌍 Déploiement du frontend sur Vercel ou Netlify.
+
+
+
