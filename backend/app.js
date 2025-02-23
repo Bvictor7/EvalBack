@@ -30,11 +30,7 @@ app.use('/api/skills', skillRoutes);
 app.use('/api/settings', settingsRoutes);
 
 // Route de base
-//app.get('/', (req, res) => res.send('Bienvenue sur l’API du portfolio 🚀'));
-app.get('/test', (req, res) => {
-  res.send('API en ligne et fonctionnelle 🚀');
-});
-
-
+//
+app.get('/', (req, res) => res.send('Bienvenue sur l’API du portfolio 🚀'));
 
 export default app;
